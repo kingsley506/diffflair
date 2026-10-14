@@ -1,5 +1,7 @@
 # DiffFlair
 
+[![Tests](https://github.com/kingsley506/diffflair/actions/workflows/ci.yml/badge.svg)](https://github.com/kingsley506/diffflair/actions/workflows/ci.yml)
+
 **Turn JSON changes into shareable, offline reports.**
 
 A local-first JSON diff workbench. Compare API responses or configuration files, skip noisy fields, and export a readable HTML report your teammate can open without an account or an internet connection.

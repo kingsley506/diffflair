@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+  <title id="title">DiffFlair — JSON changes. Made clear.</title>
+  <desc id="description">A dark green cover for DiffFlair, with a mint brand mark and a JSON diagram showing a price change and an added offline report field.</desc>
+  <defs>
+    <radialGradient id="glow" cx="90%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#aff1c8" stop-opacity=".065"/>
+      <stop offset="1" stop-color="#aff1c8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1a2420"/>
+      <stop offset="1" stop-color="#131c18"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#aff1c8" stroke-opacity=".035"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="640" fill="#101513"/>
+  <rect width="1280" height="640" fill="url(#glow)"/>
+  <rect x="660" width="620" height="640" fill="url(#grid)"/>
+  <path d="M80 560H1200" stroke="#aff1c8" stroke-opacity=".16"/>
+
+  <!-- Original diff mark: one bracket, one removal, one addition. -->
+  <g transform="translate(80 82)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect width="64" height="64" rx="18" fill="#aff1c8"/>
+    <path d="M25 18H20V46H25" stroke="#101513" stroke-width="3"/>
+    <path d="M34 25H47" stroke="#101513" stroke-width="3"/>
+    <path d="M34 39H47M40.5 32.5V45.5" stroke="#101513" stroke-width="3"/>
+  </g>
+  <text x="164" y="120" fill="#b5c1ba" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="3">A CLEARER HANDOFF</text>
+  <text x="77" y="265" fill="#aff1c8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="94" font-weight="700" letter-spacing="-4">DiffFlair</text>
+  <text x="82" y="335" fill="#f1f6f3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="44" font-weight="500" letter-spacing="-1.2">JSON changes.</text>
+  <text x="82" y="391" fill="#f1f6f3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="44" font-weight="500" letter-spacing="-1.2">Made clear.</text>
+  <text x="83" y="465" fill="#a5b3ab" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="400">Local comparison · Offline reports · Zero dependencies</text>
+  <text x="83" y="598" fill="#788b80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="500" letter-spacing=".5">OPEN SOURCE · MIT</text>
+  <text x="1200" y="598" text-anchor="end" fill="#a5b3ab" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="16">github.com/kingsley506/diffflair</text>
+
+  <!-- Self-contained JSON change diagram. -->
+  <rect x="704" y="135" width="496" height="382" rx="22" fill="url(#card)" stroke="#aff1c8" stroke-opacity=".2"/>
+  <path d="M704 201H1200" stroke="#aff1c8" stroke-opacity=".12"/>
+  <circle cx="734" cy="168" r="4" fill="#aff1c8"/>
+  <text x="749" y="173" fill="#c6d8cc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="1.2">response.json</text>
+  <rect x="1089" y="153" width="86" height="30" rx="15" fill="#aff1c8" fill-opacity=".09"/>
+  <text x="1132" y="173" text-anchor="middle" fill="#aff1c8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600">2 changes</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="22">
+    <text x="740" y="245" fill="#687f70">{</text>
+    <text x="764" y="284" fill="#cedbd2"><tspan fill="#8da598">"plan"</tspan>: "starter",</text>
+    <rect x="725" y="301" width="452" height="43" rx="7" fill="#f7a799" fill-opacity=".08"/>
+    <text x="740" y="329" fill="#f7a799">−</text>
+    <text x="764" y="329" fill="#f7a799">"price": 29,</text>
+    <rect x="725" y="350" width="452" height="43" rx="7" fill="#aff1c8" fill-opacity=".08"/>
+    <text x="740" y="378" fill="#aff1c8">+</text>
+    <text x="764" y="378" fill="#aff1c8">"price": 24,</text>
+    <rect x="725" y="399" width="452" height="43" rx="7" fill="#aff1c8" fill-opacity=".08"/>
+    <text x="740" y="427" fill="#aff1c8">+</text>
+    <text x="764" y="427" fill="#aff1c8">"reports": "offline"</text>
+    <text x="740" y="483" fill="#687f70">}</text>
+  </g>
+</svg>
