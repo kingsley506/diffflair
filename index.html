@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DiffFlair — JSON changes, made clear.</title>
+  <meta name="description" content="Compare JSON locally. Turn API changes into beautiful, shareable offline reports. No uploads, accounts, or dependencies.">
+  <meta name="theme-color" content="#101513">
+  <meta name="google" content="notranslate">
+  <meta property="og:title" content="DiffFlair — JSON changes, made clear.">
+  <meta property="og:description" content="A tiny, private workspace for JSON differences and shareable offline reports.">
+  <meta property="og:image" content="https://kingsley506.github.io/diffflair/docs/preview.jpg">
+  <link rel="icon" type="image/svg+xml" href="./docs/icon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/app.mjs"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./" aria-label="DiffFlair home"><img src="./docs/icon.svg" width="34" height="34" alt=""><strong>DiffFlair<span class="version"> / 01</span></strong></a><div class="header-actions"><span class="local-badge"><i></i><span data-i18n="local">LOCAL BY DESIGN</span></span><button id="language" class="quiet" aria-label="Switch language">中文</button><a class="github-link" href="https://github.com/kingsley506/diffflair" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow" data-i18n="eyebrow">LESS NOISE. MORE SIGNAL.</p><h1><span data-i18n="title">JSON changes.</span> <em data-i18n="subtitle">Made clear.</em></h1><p class="intro-copy" data-i18n="intro">Compare locally. Share a report. Keep your data yours.</p></div><div class="intro-mark" aria-hidden="true"><span>−</span><span>+</span><div>BEFORE → AFTER</div></div></section>
+    <section class="workspace" aria-label="JSON comparison workspace">
+      <div class="workspace-bar"><div class="segmented"><span class="active" data-i18n="workspace">Workspace</span><span class="small muted" data-i18n="noUpload">No uploads · No account</span></div><div class="workspace-actions"><select id="example" aria-label="Choose example"><option value="webhook" data-i18n="exampleWebhook">Example: API response</option><option value="config" data-i18n="exampleConfig">Example: app config</option><option value="array" data-i18n="exampleArray">Example: arrays</option></select><button class="quiet" id="swap" data-i18n="swap">⇄ Swap</button><button class="quiet" id="clear" data-i18n="clear">Clear</button></div></div>
+      <div class="editor-grid">
+        <section class="editor-panel" data-side="before"><div class="editor-heading"><h2><span class="dot before-dot"></span><span data-i18n="before">Before</span></h2><div><span class="size" id="before-size">0 B</span><button class="small quiet format" data-side="before" data-i18n="format">Format</button><button class="small quiet upload" data-side="before" data-i18n="open">Open file ↗</button></div></div><div class="code-editor"><pre class="line-numbers" aria-hidden="true" id="before-lines">1</pre><textarea id="before" aria-label="Before JSON" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder='Paste JSON or drop a .json file here'></textarea></div><p class="input-error" id="before-error" role="alert"></p></section>
+        <section class="editor-panel" data-side="after"><div class="editor-heading"><h2><span class="dot after-dot"></span><span data-i18n="after">After</span></h2><div><span class="size" id="after-size">0 B</span><button class="small quiet format" data-side="after" data-i18n="format">Format</button><button class="small quiet upload" data-side="after" data-i18n="open">Open file ↗</button></div></div><div class="code-editor"><pre class="line-numbers" aria-hidden="true" id="after-lines">1</pre><textarea id="after" aria-label="After JSON" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder='Paste JSON or drop a .json file here'></textarea></div><p class="input-error" id="after-error" role="alert"></p></section>
+      </div>
+      <div class="compare-bar"><label class="ignore-label"><span data-i18n="ignore">Ignore paths</span><input id="ignore" placeholder="/updated_at, /request_id" autocomplete="off" aria-label="Ignore JSON pointer paths"></label><span class="shortcut">⌘ / Ctrl + Enter</span><button id="compare" class="primary"><span data-i18n="compare">Compare JSON</span><span aria-hidden="true">↗</span></button></div>
+    </section>
+    <section class="results" aria-labelledby="results-title"><div class="results-heading"><div><p class="eyebrow" data-i18n="resultEyebrow">THE DIFFERENCE</p><h2 id="results-title" aria-live="polite">Ready to compare</h2></div><div class="result-meta"><span id="elapsed"></span><label class="mask-toggle"><input id="mask" type="checkbox" checked><span data-i18n="mask">Mask sensitive fields</span></label></div></div>
+      <div class="results-toolbar"><div class="filters" aria-label="Filter changes"><button data-filter="all" class="filter active"><span data-i18n="all">All</span><b id="count-all">0</b></button><button data-filter="added" class="filter"><span class="status-dot added"></span><span data-i18n="added">Added</span><b id="count-added">0</b></button><button data-filter="changed" class="filter"><span class="status-dot changed"></span><span data-i18n="changed">Changed</span><b id="count-changed">0</b></button><button data-filter="removed" class="filter"><span class="status-dot removed"></span><span data-i18n="removed">Removed</span><b id="count-removed">0</b></button></div><input type="search" id="search" placeholder="Find a path…" aria-label="Search changed paths"></div>
+      <div id="changes" class="changes"></div><button id="more" class="quiet" hidden data-i18n="more">Show more changes</button>
+      <div class="export-bar"><div class="export-copy"><span class="export-icon" aria-hidden="true">↳</span><div><strong data-i18n="shareTitle">A difference worth sharing.</strong><p data-i18n="shareCopy">One HTML file. Opens anywhere. No internet needed.</p></div></div><div class="export-actions"><button id="markdown" class="secondary" data-i18n="markdown" disabled>Markdown ↓</button><button id="patch" class="secondary" data-i18n="patch" disabled>JSON Patch ↓</button><button id="html" class="export-primary" data-i18n="html" disabled>Export report ↗</button></div></div>
+      <p class="rules" data-i18n="rules">Arrays compare by position. Masks cover common key names, so review reports before sharing. JSON Patch contains original values.</p>
+    </section>
+  </main>
+  <footer><span>DiffFlair <span class="muted">—</span> <span data-i18n="footer">Small tool. Clear changes.</span></span><div><span data-i18n="privacy">Your JSON stays in this tab.</span><a href="https://github.com/kingsley506/diffflair#cli" target="_blank" rel="noopener noreferrer">CLI ↗</a><span>MIT</span></div></footer>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <input id="file" type="file" accept=".json,application/json" hidden>
+</body>
+</html>

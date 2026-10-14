@@ -1,0 +1,15 @@
+{
+  "service": "checkout",
+  "version": "1.8.0",
+  "deployment": {
+    "replicas": 2,
+    "region": "eu-west-1",
+    "lastUpdated": "2026-10-13T09:00:00Z"
+  },
+  "features": {
+    "expressCheckout": false,
+    "legacyCoupons": true
+  },
+  "apiToken": "demo_before_token",
+  "allowedOrigins": ["https://shop.example.com"]
+}

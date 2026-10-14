@@ -1,0 +1,30 @@
+{
+  "name": "diffflair",
+  "version": "0.1.0",
+  "description": "A local-first JSON diff workbench with portable reports and RFC 6902 patches.",
+  "type": "module",
+  "bin": {
+    "diffflair": "bin/diffflair.mjs"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kingsley506/diffflair.git"
+  },
+  "homepage": "https://kingsley506.github.io/diffflair/",
+  "keywords": [
+    "json",
+    "diff",
+    "json-patch",
+    "local-first",
+    "developer-tools",
+    "zero-dependencies"
+  ]
+}
